@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="كرم حراز - مصمم جرافيك سوشيال ميديا متخصص في تصميم الأنظمة البصرية والحملات الإعلانية للشركات">
+    <meta name="keywords" content="تصميم سوشيال ميديا, مصمم جرافيك, حملات إعلانية, تصميم براند">
+    <title>Karam Haraz | Social Media Graphic Designer</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --bg-hover: #252525;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #f5f5f5;
+            --accent-hover: #e0e0e0;
+            --border: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.9;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: var(--bg-dark);
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            background: var(--bg-hover);
+            transform: translateY(-5px);
+            border-color: #3a3a3a;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Advantages Section */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .advantage-card {
+            background: var(--bg-card);
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .advantage-card:hover {
+            background: var(--bg-hover);
+            border-color: #3a3a3a;
+        }
+
+        .advantage-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .advantage-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .portfolio-item {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            border-color: #3a3a3a;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .portfolio-info {
+            padding: 25px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .portfolio-cta {
+            text-align: center;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 35px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .blog-card:hover {
+            background: var(--bg-hover);
+            transform: translateY(-3px);
+        }
+
+        .blog-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--bg-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-secondary);
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: var(--accent);
+            width: 30px;
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid,
+            .services-grid,
+            .advantages-grid,
+            .blog-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Karam Haraz</div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#portfolio">الأعمال</a></li>
+                <li><a href="#blog">المقالات</a></li>
+                <li><a href="#contact">تواصل</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>كرم حراز</h1>
+                <p class="hero-subtitle">Social Media Graphic Designer</p>
+                <p class="hero-description">
+                    أساعد الشركات والأعمال في بناء هوية بصرية قوية على السوشيال ميديا من خلال تصميمات احترافية تخدم أهدافك التسويقية وتزيد من تفاعل جمهورك
+                </p>
+                <a href="https://wa.me/201063110138" class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">الخدمات</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Social Media Design Systems</h3>
+                    <p>بناء نظام تصميم متكامل لحساباتك على السوشيال ميديا يضمن اتساق الهوية البصرية ويسهل عملية إنتاج المحتوى بشكل مستمر واحترافي</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Campaign & Ad Design</h3>
+                    <p>تصميم حملات إعلانية بصرية تجذب الانتباه وتحقق نتائج ملموسة، مع فهم عميق لمتطلبات الإعلانات المدفوعة على مختلف المنصات</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Brand Visual Support</h3>
+                    <p>دعم بصري مستمر للبراند الخاص بك من خلال تصميمات تعكس هويتك بشكل صحيح وتساعدك في بناء حضور قوي ومميز في السوق</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" style="background: var(--bg-card);">
+        <div class="container">
+            <h2 class="section-title">لماذا تعمل معي</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <i class="fas fa-tools"></i>
+                    <h4>فهم قوي لأدوات التصميم</h4>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>فهم حقيقي لصناعة الإعلان والتسويق</h4>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>استخدام أدوات الـ AI بشكل عملي واحترافي</h4>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-gem"></i>
+                    <h4>جودة عالية واهتمام بالتفاصيل</h4>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>مرونة في الوقت والتعامل</h4>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>تفكير استراتيجي يخدم البيزنس</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">أعمال سابقة</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-image" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>حملة إعلانية - عقارات</h3>
+                        <p>تصميم حملة إعلانية متكاملة لشركة عقارات تستهدف السوق الخليجي</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-image" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>نظام تصميم سوشيال ميديا</h3>
+                        <p>بناء نظام بصري كامل لشركة في مجال التكنولوجيا</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-image" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>تصميمات براند</h3>
+                        <p>دعم بصري مستمر لبراند في قطاع الأزياء</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-cta">
+                <a href="https://www.behance.net/karamharaaz" target="_blank" class="cta-button">
+                    <i class="fab fa-behance"></i>
+                    عرض كل الأعمال على Behance
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" style="background: var(--bg-card);">
+        <div class="container">
+            <h2 class="section-title">مقالات ونصائح</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <h3>أساسيات تصميم السوشيال ميديا</h3>
+                    <p>تصميم السوشيال ميديا مش مجرد صور حلوة. لازم يكون في فهم للمنصة، للجمهور، ولطبيعة المحتوى اللي بتقدمه. كل منصة ليها قواعدها وأحجامها الخاصة، ومعرفة الفروق دي بتفرق كتير في النتيجة النهائية.</p>
+                </div>
+                <div class="blog-card">
+                    <h3>الإعلانات الفعالة: ما وراء التصميم</h3>
+                    <p>الإعلان الناجح بيبدأ من فهم الهدف التسويقي مش من التصميم نفسه. لازم تعرف أنت بتتكلم مع مين، وعايز منه إيه. التصميم الحلو من غير استراتيجية واضحة مش هيوصلك للنتيجة اللي انت عايزها.</p>
+                </div>
+                <div class="blog-card">
+                    <h3>استخدام الـ AI في التصميم بشكل عملي</h3>
+                    <p>أدوات الذكاء الاصطناعي مش بديل للمصمم، لكنها بتسرع العمليات وبتفتح إمكانيات جديدة. المهم تعرف إزاي تستخدمها بشكل صح يخدم جودة الشغل مش يقللها، وتفضل محتفظ بلمستك الشخصية في الشغل.</p>
+                </div>
+                <div class="blog-card">
+                    <h3>البراندنج: أكتر من مجرد لوجو</h3>
+                    <p>البراندنج الحقيقي بيشمل كل حاجة بصرية بتمثل الشركة. من الألوان للخطوط، لطريقة عرض المحتوى. الاتساق في كل العناصر دي بيخلي البراند يبقى واضح ومعروف عند الجمهور بشكل أسرع وأقوى.</p>
+                </div>
+                <div class="blog-card">
+                    <h3>العمل مع الشركات كفريلانسر</h3>
+                    <p>التعامل مع الشركات بيحتاج احترافية في التواصل، الالتزام بالمواعيد، وفهم متطلبات البيزنس. مش كفاية تكون مصمم شاطر، لازم تكون شريك موثوق يقدر يفهم الأهداف التجارية ويترجمها لحلول بصرية فعالة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء العملاء</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"كرم فهم احتياجات الشركة بشكل دقيق وقدم تصميمات احترافية جدًا للحملة الإعلانية. التعامل كان سلس والالتزام بالمواعيد ممتاز."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>أحمد السيد</h4>
+                            <p>مدير تسويق - شركة عقارية</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"شغل محترم وجودة عالية. النظام البصري اللي عمله كرم ساعدنا نحافظ على هوية موحدة على كل المنصات وسهل علينا إنتاج المحتوى."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>سارة محمود</h4>
+                            <p>صاحبة براند أزياء</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"تعاملت مع كرم في أكثر من مشروع. دايمًا بيجيب أفكار جديدة ومناسبة للسوق المستهدف. أسلوبه في العمل احترافي ومرن."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>خالد العتيبي</h4>
+                            <p>مؤسس شركة تقنية - السعودية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: var(--bg-card);">
+        <div class="container">
+            <h2 class="section-title">تواصل معي</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>هل عندك مشروع أو استفسار؟</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 40px;">تواصل معي عبر الواتساب أو املأ النموذج وهرد عليك في أقرب وقت</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>karammh112@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+201063110138</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-behance"></i>
+                            <a href="https://www.behance.net/karamharaaz" target="_blank" style="color: var(--text-secondary); text-decoration: none;">behance.net/karamharaaz</a>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/201063110138" class="cta-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        تواصل مباشرة
+                    </a>
+                </div>
+
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">الاسم</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">كيف ممكن أساعدك؟</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        إرسال
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Karam Haraz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();

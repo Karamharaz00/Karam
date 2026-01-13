@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="كرم حراز | Karam Haraz - مصمم جرافيك متخصص في تصميمات السوشيال ميديا، الهوية البصرية، والدمج الرقمي.">
-    <title>Karam Haraz | Visual & Social Media Designer</title>
+    <meta name="description" content="Karam Haraz | Visual & Social Media Designer - كرم حراز مصمم جرافيك">
+    <title>Karam Haraz | Designer</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,13 @@
             line-height: 1.8;
         }
 
+        /* English Font Override */
         html[lang="en"] body { font-family: 'Montserrat', sans-serif; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
 
         a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
@@ -48,14 +54,14 @@
         
         .btn {
             display: inline-block;
-            padding: 14px 35px;
+            padding: 12px 30px;
             background: var(--gold);
             color: #000;
             font-weight: 700;
             border-radius: 5px;
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         .btn:hover { background: var(--gold-hover); transform: translateY(-3px); }
 
@@ -82,17 +88,20 @@
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.8rem; font-weight: 900; color: #fff; }
         .logo span { color: var(--gold); }
-        .nav-links { display: flex; gap: 30px; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a:hover { color: var(--gold); }
-        .lang-switch {
+        
+        .lang-btn {
             background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
+            border: 1px solid #fff;
+            color: #fff;
             padding: 5px 15px;
             border-radius: 20px;
             cursor: pointer;
-            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
+        .lang-btn:hover { background: var(--gold); border-color: var(--gold); color: #000; }
 
         /* --- Hero Section --- */
         .hero {
@@ -103,49 +112,39 @@
             text-align: center;
             padding-top: 100px;
             background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 70%);
-            position: relative;
         }
-        .hero h1 { font-size: 4.5rem; margin-bottom: 10px; font-weight: 900; line-height: 1.2; }
+        .hero h1 { font-size: 4rem; margin-bottom: 10px; font-weight: 900; line-height: 1.2; }
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--text-secondary);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
         .hero-subtitle span { color: var(--gold); font-weight: 700; }
         
-        /* Stats Box */
         .stats-wrapper {
             display: flex;
             justify-content: center;
             gap: 40px;
-            margin: 60px 0;
+            margin: 50px 0;
             flex-wrap: wrap;
         }
         .stat-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 30px 50px;
+            padding: 25px 40px;
             border-radius: 15px;
             border: 1px solid var(--border);
             text-align: center;
-            transition: var(--transition);
         }
-        .stat-card:hover { transform: translateY(-10px); border-color: var(--gold); }
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--gold);
-            line-height: 1;
-            display: block;
-        }
-        .stat-label { font-size: 1.2rem; font-weight: 600; color: #fff; }
+        .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--gold); line-height: 1; display: block; }
+        .stat-label { font-size: 1.1rem; font-weight: 600; color: #fff; }
 
-        /* --- Services (Specializations) --- */
+        /* --- Services --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
         .service-card {
@@ -157,8 +156,6 @@
         }
         .service-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .service-icon { font-size: 3rem; color: var(--gold); margin-bottom: 25px; }
-        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
-        .service-card p { color: var(--text-secondary); font-size: 1.05rem; }
 
         /* --- Why Me (Value) --- */
         .whyme-grid {
@@ -174,11 +171,10 @@
             border-radius: 10px;
             border-right: 3px solid var(--gold); 
         }
-        [dir="ltr"] .value-card { border-right: none; border-left: 3px solid var(--gold); }
-        
+        /* LTR Support for Border */
+        html[dir="ltr"] .value-card { border-right: none; border-left: 3px solid var(--gold); }
+
         .value-icon { font-size: 2rem; color: var(--gold); min-width: 40px; }
-        .value-content h4 { font-size: 1.3rem; margin-bottom: 10px; }
-        .value-content p { color: var(--text-secondary); font-size: 0.95rem; }
 
         /* --- Portfolio --- */
         .portfolio-grid {
@@ -192,7 +188,7 @@
             overflow: hidden;
             height: 350px;
             cursor: pointer;
-            group: group;
+            border: 1px solid var(--border);
         }
         .project-img {
             width: 100%;
@@ -206,38 +202,41 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
             padding: 30px;
             transform: translateY(100px);
             transition: 0.3s ease;
             opacity: 0;
+            pointer-events: none; /* Allows clicking through if needed, but we wrap img */
         }
         .project-card:hover .project-overlay { transform: translateY(0); opacity: 1; }
         .project-title { font-size: 1.4rem; color: #fff; margin-bottom: 5px; }
         .project-cat { color: var(--gold); font-size: 0.9rem; margin-bottom: 15px; display: block; }
-        .project-link { display: inline-block; color: #fff; text-decoration: underline; font-weight: bold; }
+        .project-link-text { color: #fff; text-decoration: underline; font-weight: bold; }
 
         /* --- Testimonials --- */
         .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .review-card {
             background: var(--bg-card);
-            padding: 30px;
+            padding: 40px;
             border-radius: 12px;
-            position: relative;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
         }
-        .review-card i { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
-        .review-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; font-style: italic; }
-        .client-info h4 { color: #fff; font-size: 1.1rem; }
-        .client-info span { color: var(--text-secondary); font-size: 0.9rem; }
+        .review-icon { color: var(--gold); font-size: 2rem; }
 
         /* --- Blog --- */
         .blog-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
         .blog-card {
@@ -247,13 +246,17 @@
             overflow: hidden;
             cursor: pointer;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
-        .blog-card:hover { border-color: var(--gold); }
+        .blog-card:hover { border-color: var(--gold); transform: translateY(-5px); }
         .blog-thumb { height: 200px; width: 100%; object-fit: cover; }
-        .blog-body { padding: 25px; }
-        .blog-tag { background: #222; color: var(--gold); padding: 5px 12px; font-size: 0.8rem; border-radius: 20px; }
-        .blog-title { margin: 15px 0; font-size: 1.3rem; line-height: 1.4; }
-        .read-btn { color: var(--gold); font-weight: bold; font-size: 0.9rem; }
+        .blog-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-tag { background: #222; color: var(--gold); padding: 5px 12px; font-size: 0.8rem; border-radius: 20px; width: fit-content; margin-bottom: 15px; }
+        .blog-title { margin: 0 0 10px 0; font-size: 1.2rem; line-height: 1.4; color: #fff; }
+        .blog-desc { color: #aaa; font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; }
+        .read-btn { color: var(--gold); font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; }
 
         /* Modal */
         .modal {
@@ -264,62 +267,65 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow-y: auto;
             background-color: rgba(0,0,0,0.95);
             padding: 40px 0;
+            backdrop-filter: blur(5px);
         }
         .modal-content {
             background-color: #111;
             margin: auto;
-            padding: 40px;
             border: 1px solid var(--gold);
-            width: 80%;
+            width: 90%;
             max-width: 900px;
-            border-radius: 10px;
-            color: #ddd;
-        }
-        .modal-close { color: #aaa; float: left; font-size: 28px; font-weight: bold; cursor: pointer; }
-        .modal-close:hover { color: #fff; }
-        .modal-body-text { font-size: 1.1rem; line-height: 2; margin-top: 30px; white-space: pre-line; }
-        .modal-body-text h2 { color: var(--gold); margin-top: 30px; font-size: 1.8rem; }
-        .modal-body-text h3 { color: #fff; margin-top: 20px; }
-
-        /* --- Contact --- */
-        .contact-section {
-            background: #111;
-            padding: 80px 0;
-            border-top: 1px solid var(--border);
-        }
-        .form-box {
-            background: var(--bg-dark);
-            padding: 40px;
             border-radius: 15px;
-            border: 1px solid var(--border);
-            max-width: 700px;
-            margin: 0 auto;
+            color: #ddd;
+            position: relative;
         }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 10px; color: var(--gold); font-weight: bold; }
-        .form-control {
+        .modal-header-img {
             width: 100%;
-            padding: 15px;
-            background: #1a1a1a;
-            border: 1px solid #333;
-            color: #fff;
-            border-radius: 5px;
-            font-family: inherit;
+            height: 300px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
         }
+        .modal-close { 
+            position: absolute;
+            top: 20px;
+            width: 40px; height: 40px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+            transition: 0.3s;
+        }
+        /* Positioning close button based on Direction */
+        html[dir="rtl"] .modal-close { left: 20px; }
+        html[dir="ltr"] .modal-close { right: 20px; }
+        
+        .modal-close:hover { background: var(--gold); color: #000; }
+        .modal-body-text { padding: 0 40px 40px 40px; font-size: 1.1rem; line-height: 2; }
+        .modal-body-text h2 { color: var(--gold); font-size: 2rem; margin-bottom: 20px; margin-top: -40px; position: relative; }
+        
+        /* Contact */
+        .contact-section { background: #111; padding: 80px 0; border-top: 1px solid var(--border); }
+        .form-box { background: var(--bg-dark); padding: 40px; border-radius: 15px; border: 1px solid var(--border); max-width: 700px; margin: 0 auto; }
+        .form-control { width: 100%; padding: 15px; background: #1a1a1a; border: 1px solid #333; color: #fff; border-radius: 5px; margin-bottom: 20px; font-family: inherit; }
         .form-control:focus { outline: none; border-color: var(--gold); }
-        textarea.form-control { min-height: 150px; resize: vertical; }
 
-        /* --- Footer --- */
         footer { padding: 30px; text-align: center; border-top: 1px solid #222; font-size: 0.9rem; color: #777; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.8rem; }
-            .stat-number { font-size: 3rem; }
             .nav-links { display: none; }
-            .modal-content { width: 95%; padding: 20px; }
+            .modal-body-text { padding: 20px; }
+            .review-card { flex-direction: column; }
         }
     </style>
 </head>
@@ -329,65 +335,66 @@
         <div class="container nav-content">
             <div class="logo">KARAM <span>HARAZ</span></div>
             <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#specializations">تخصصاتي</a></li>
-                <li><a href="#portfolio">أعمالي</a></li>
-                <li><a href="#why-me">لماذا أنا؟</a></li>
-                <li><a href="#blog">المقالات</a></li>
+                <li><a href="#home" data-key="nav_home">الرئيسية</a></li>
+                <li><a href="#specializations" data-key="nav_services">تخصصاتي</a></li>
+                <li><a href="#portfolio" data-key="nav_portfolio">أعمالي</a></li>
+                <li><a href="#blog" data-key="nav_blog">المقالات</a></li>
             </ul>
-            <a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">تواصل الآن</a>
+            <div style="display:flex; gap:15px; align-items:center;">
+                <button class="lang-btn" onclick="toggleLanguage()">English / عربي</button>
+                <a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.9rem;" data-key="nav_contact">تواصل الآن</a>
+            </div>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="container" data-aos="fade-up">
-            <h1>كرم حراز</h1>
+            <h1 data-key="hero_name">كرم حراز</h1>
             <p class="hero-subtitle">
-                مش مجرد تصميمات شكلها حلو، أنا بساعدك تبني <span>براند قوي</span> وتوصل لعملاء أكتر من خلال تصميمات مدروسة تخدم أهداف البيزنس بتاعك.
-                <br>
-                <span style="color: #fff; font-size: 1.1rem; display: block; margin-top: 15px;">متخصص في تصميمات الفيجوال و السوشيال ميديا</span>
+                <span data-key="hero_desc_1">مش مجرد تصميمات شكلها حلو، أنا بساعدك تبني براند قوي</span><br>
+                <span style="color: #fff; display: block; margin-top: 10px;" data-key="hero_desc_2">متخصص في تصميمات الفيجوال و السوشيال ميديا</span>
             </p>
 
             <div class="stats-wrapper">
                 <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
                     <span class="stat-number">+5</span>
-                    <span class="stat-label">سنوات خبرة</span>
+                    <span class="stat-label" data-key="stat_exp">سنوات خبرة</span>
                 </div>
                 <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
                     <span class="stat-number">+120</span>
-                    <span class="stat-label">مشروع ناجح</span>
+                    <span class="stat-label" data-key="stat_proj">مشروع ناجح</span>
                 </div>
                 <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
                     <span class="stat-number">+60</span>
-                    <span class="stat-label">عميل سعيد</span>
+                    <span class="stat-label" data-key="stat_client">عميل سعيد</span>
                 </div>
             </div>
 
             <div style="margin-top: 40px;">
-                <a href="#contact" class="btn">ابدأ مشروعك</a>
-                <a href="https://www.behance.net/karamharaaz" target="_blank" class="btn" style="background: transparent; border: 1px solid #fff; color: #fff; margin-right: 15px;">Behance Portfolio</a>
+                <a href="#contact" class="btn" data-key="hero_cta">ابدأ مشروعك</a>
+                <a href="https://www.behance.net/karamharaaz" target="_blank" class="btn" style="background: transparent; border: 1px solid #fff; color: #fff; margin-inline-start: 15px;" data-key="hero_behance">Behance Portfolio</a>
             </div>
         </div>
     </section>
 
     <section id="specializations" style="padding: 100px 0;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">تخصصاتي</h2>
+            <h2 class="section-title" data-aos="fade-up" data-key="section_services">تخصصاتي</h2>
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-layer-group service-icon"></i>
                     <h3>Social Media Design</h3>
-                    <p>بصمملك سيستم تصميمات كامل لصفحاتك بيضمن إن شكل البراند بتاعك يكون موحد، قوي، واحترافي في كل بوست ينزل.</p>
+                    <p data-key="serv_1_desc">بصمملك سيستم تصميمات كامل لصفحاتك بيضمن إن شكل البراند بتاعك يكون موحد، قوي، واحترافي في كل بوست ينزل.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-bullhorn service-icon"></i>
                     <h3>Campaign & Ad Design</h3>
-                    <p>تصميمات إعلانية بتركز بشكل أساسي على البيع (Sales) وجذب انتباه العميل من أول ثانية، معمولة خصيصاً عشان تحقق نتايج.</p>
+                    <p data-key="serv_2_desc">تصميمات إعلانية بتركز بشكل أساسي على البيع (Sales) وجذب انتباه العميل من أول ثانية، معمولة خصيصاً عشان تحقق نتايج.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-palette service-icon"></i>
                     <h3>Brand Visual Support</h3>
-                    <p>بكون شريكك البصري؛ تطوير مستمر لهوية البراند وحل أي مشاكل بصرية تواجهك عشان نضمن إن شكلك دايماً مميز في السوق.</p>
+                    <p data-key="serv_3_desc">بكون شريكك البصري؛ تطوير مستمر لهوية البراند وحل أي مشاكل بصرية تواجهك عشان نضمن إن شكلك دايماً مميز في السوق.</p>
                 </div>
             </div>
         </div>
@@ -395,126 +402,86 @@
 
     <section id="why-me" style="padding: 100px 0; background: #111;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">ليه تشتغل معايا؟</h2>
-            <p style="text-align: center; color: #777; margin-bottom: 50px;">القيمة اللي بقدمها ليك كصاحب بيزنس</p>
-            
+            <h2 class="section-title" data-aos="fade-up" data-key="section_whyme">لماذا أنا؟</h2>
             <div class="whyme-grid">
-                <div class="value-card" data-aos="fade-left" data-aos-delay="100">
-                    <i class="fas fa-chess-knight value-icon"></i>
-                    <div class="value-content">
-                        <h4>تفكير استراتيجي</h4>
-                        <p>مش بنفذ وخلاص، أنا بفهم أهدافك الأول وبصمم بناءً عليها عشان التصميم يخدم البيزنس.</p>
-                    </div>
-                </div>
-
-                <div class="value-card" data-aos="fade-right" data-aos-delay="150">
-                    <i class="fas fa-robot value-icon"></i>
-                    <div class="value-content">
-                        <h4>استخدام احترافي للـ AI</h4>
-                        <p>بوظف أدوات الذكاء الاصطناعي عشان أطلع أفكار إبداعية وأوفر وقت ومجهود مع الحفاظ على الجودة.</p>
-                    </div>
-                </div>
-
-                <div class="value-card" data-aos="fade-left" data-aos-delay="200">
-                    <i class="fas fa-chart-line value-icon"></i>
-                    <div class="value-content">
-                        <h4>فهم لصناعة الإعلان</h4>
-                        <p>عندي خلفية قوية في الماركتينج، فبعرف إزاي التصميم يشد عين العميل ويقنعه.</p>
-                    </div>
-                </div>
-
-                <div class="value-card" data-aos="fade-right" data-aos-delay="250">
-                    <i class="fas fa-clock value-icon"></i>
-                    <div class="value-content">
-                        <h4>مرونة والتزام</h4>
-                        <p>بقدّر قيمة الوقت جداً، وبسلمك الشغل في ميعاده وبجودة عالية زي ما اتفقنا.</p>
-                    </div>
-                </div>
-
-                <div class="value-card" data-aos="fade-left" data-aos-delay="300">
-                    <i class="fas fa-laptop-code value-icon"></i>
-                    <div class="value-content">
-                        <h4>تمكن من الأدوات</h4>
-                        <p>خبرة قوية في برامج التصميم بتخليني أطلع أي فكرة في دماغنا بشكل احترافي.</p>
-                    </div>
-                </div>
-
-                <div class="value-card" data-aos="fade-right" data-aos-delay="350">
-                    <i class="fas fa-search-plus value-icon"></i>
-                    <div class="value-content">
-                        <h4>اهتمام بالتفاصيل</h4>
-                        <p>عيني دايماً على أدق التفاصيل عشان الشغل يطلع "مظبوط" ومفيهوش غلطة.</p>
-                    </div>
-                </div>
+                <div class="value-card" data-aos="fade-up"><i class="fas fa-chess-knight value-icon"></i><div><h4 data-key="val_1_t">تفكير استراتيجي</h4><p data-key="val_1_d">بفهم أهدافك الأول وبصمم بناءً عليها.</p></div></div>
+                <div class="value-card" data-aos="fade-up"><i class="fas fa-robot value-icon"></i><div><h4 data-key="val_2_t">استخدام احترافي للـ AI</h4><p data-key="val_2_d">بوظف الذكاء الاصطناعي لتوفير الوقت وزيادة الإبداع.</p></div></div>
+                <div class="value-card" data-aos="fade-up"><i class="fas fa-chart-line value-icon"></i><div><h4 data-key="val_3_t">فهم لصناعة الإعلان</h4><p data-key="val_3_d">عندي خلفية ماركتينج تخلي التصميم يبيع.</p></div></div>
+                <div class="value-card" data-aos="fade-up"><i class="fas fa-clock value-icon"></i><div><h4 data-key="val_4_t">مرونة والتزام</h4><p data-key="val_4_d">بسلمك الشغل في ميعاده وبجودة عالية.</p></div></div>
+                <div class="value-card" data-aos="fade-up"><i class="fas fa-laptop-code value-icon"></i><div><h4 data-key="val_5_t">تمكن من الأدوات</h4><p data-key="val_5_d">خبرة قوية في برامج أدوبي.</p></div></div>
+                <div class="value-card" data-aos="fade-up"><i class="fas fa-search-plus value-icon"></i><div><h4 data-key="val_6_t">اهتمام بالتفاصيل</h4><p data-key="val_6_d">عيني دايماً على أدق التفاصيل.</p></div></div>
             </div>
         </div>
     </section>
 
     <section id="portfolio" style="padding: 100px 0;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">أحدث الأعمال</h2>
+            <h2 class="section-title" data-aos="fade-up" data-key="section_work">أحدث الأعمال</h2>
             <div class="portfolio-grid">
                 
                 <div class="project-card" data-aos="fade-up">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c3db67231373873.688846b090c6e.png" class="project-img" alt="Formula 1">
+                    <a href="https://www.behance.net/gallery/231373873/Formula-1-Manipulation-Design" target="_blank">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c3db67231373873.688846b090c6e.png" class="project-img">
+                    </a>
                     <div class="project-overlay">
-                        <span class="project-cat">Manipulation Design</span>
+                        <span class="project-cat">Manipulation</span>
                         <h3 class="project-title">Formula 1 Project</h3>
-                        <a href="https://www.behance.net/gallery/231373873/Formula-1-Manipulation-Design" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-left"></i></a>
+                        <a href="https://www.behance.net/gallery/231373873/Formula-1-Manipulation-Design" target="_blank" class="project-link-text" data-key="view_project">عرض المشروع</a>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8833e1231291761.6886e5b32d617.png" class="project-img" alt="Home Nursing">
+                    <a href="https://www.behance.net/gallery/231291761/Home-Nursing-Social-Media-Designs" target="_blank">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8833e1231291761.6886e5b32d617.png" class="project-img">
+                    </a>
                     <div class="project-overlay">
-                        <span class="project-cat">Social Media Ads</span>
-                        <h3 class="project-title">Home Nursing Campaign</h3>
-                        <a href="https://www.behance.net/gallery/231291761/Home-Nursing-Social-Media-Designs" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-left"></i></a>
+                        <span class="project-cat">Social Media</span>
+                        <h3 class="project-title">Home Nursing</h3>
+                        <a href="https://www.behance.net/gallery/231291761/Home-Nursing-Social-Media-Designs" target="_blank" class="project-link-text" data-key="view_project">عرض المشروع</a>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/49a4aa220473603.Y3JvcCwxMjc3LDk5OSw4OCww.png" class="project-img" alt="Ad Design">
+                    <a href="https://www.behance.net/gallery/220473603/Social-media-design-advertising" target="_blank">
+                        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/49a4aa220473603.Y3JvcCwxMjc3LDk5OSw4OCww.png" class="project-img">
+                    </a>
                     <div class="project-overlay">
-                        <span class="project-cat">Advertising</span>
-                        <h3 class="project-title">Social Media Advertising</h3>
-                        <a href="https://www.behance.net/gallery/220473603/Social-media-design-advertising" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-left"></i></a>
+                        <span class="project-cat">Ads</span>
+                        <h3 class="project-title">Advertising Design</h3>
+                        <a href="https://www.behance.net/gallery/220473603/Social-media-design-advertising" target="_blank" class="project-link-text" data-key="view_project">عرض المشروع</a>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up">
-                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/7bf937210329439.Y3JvcCwxMjY0LDk4OCw1Niww.png" class="project-img" alt="Portfolio">
+                    <a href="https://www.behance.net/gallery/210329439/Karam-Haraz-Portfolio" target="_blank">
+                        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/7bf937210329439.Y3JvcCwxMjY0LDk4OCw1Niww.png" class="project-img">
+                    </a>
                     <div class="project-overlay">
                         <span class="project-cat">Branding</span>
-                        <h3 class="project-title">Karam Haraz Portfolio</h3>
-                        <a href="https://www.behance.net/gallery/210329439/Karam-Haraz-Portfolio" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-left"></i></a>
+                        <h3 class="project-title">My Portfolio</h3>
+                        <a href="https://www.behance.net/gallery/210329439/Karam-Haraz-Portfolio" target="_blank" class="project-link-text" data-key="view_project">عرض المشروع</a>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/14d788226503533.Y3JvcCwxMjc3LDk5OSw2MCww.png" class="project-img" alt="Sports Academy">
+                    <a href="https://www.behance.net/gallery/226503533/Sports-Academy-Social-Media-Designs" target="_blank">
+                        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/14d788226503533.Y3JvcCwxMjc3LDk5OSw2MCww.png" class="project-img">
+                    </a>
                     <div class="project-overlay">
                         <span class="project-cat">Social Media</span>
-                        <h3 class="project-title">Sports Academy Designs</h3>
-                        <a href="https://www.behance.net/gallery/226503533/Sports-Academy-Social-Media-Designs" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-left"></i></a>
+                        <h3 class="project-title">Sports Academy</h3>
+                        <a href="https://www.behance.net/gallery/226503533/Sports-Academy-Social-Media-Designs" target="_blank" class="project-link-text" data-key="view_project">عرض المشروع</a>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/93fc99218838583.Y3JvcCwxMjc3LDk5OSw2MCww.png" class="project-img" alt="Ads Vol 1">
+                    <a href="https://www.behance.net/gallery/218838583/Social-Media-Advertising-Designs-VOL-1" target="_blank">
+                        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/93fc99218838583.Y3JvcCwxMjc3LDk5OSw2MCww.png" class="project-img">
+                    </a>
                     <div class="project-overlay">
                         <span class="project-cat">Campaigns</span>
-                        <h3 class="project-title">Advertising Vol. 1</h3>
-                        <a href="https://www.behance.net/gallery/218838583/Social-Media-Advertising-Designs-VOL-1" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-left"></i></a>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/1c8e9f168821713.Y3JvcCwxMzk5LDEwOTUsMCww.png" class="project-img" alt="Burger">
-                    <div class="project-overlay">
-                        <span class="project-cat">Food Manipulation</span>
-                        <h3 class="project-title">Burger Social Media</h3>
-                        <a href="https://www.behance.net/gallery/168821713/Burger-Social-Media-Designs" target="_blank" class="project-link">عرض المشروع <i class="fas fa-arrow-left"></i></a>
+                        <h3 class="project-title">Ads Vol. 1</h3>
+                        <a href="https://www.behance.net/gallery/218838583/Social-Media-Advertising-Designs-VOL-1" target="_blank" class="project-link-text" data-key="view_project">عرض المشروع</a>
                     </div>
                 </div>
 
@@ -522,53 +489,63 @@
         </div>
     </section>
 
-    <section id="reviews" style="padding: 80px 0; background: #111;">
+    <section id="reviews" style="padding: 80px 0; background: #111; overflow-x: hidden;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">قالوا عني</h2>
+            <h2 class="section-title" data-aos="fade-up" data-key="section_reviews">قالوا عني</h2>
             <div class="testimonials-grid">
                 
-                <div class="review-card" data-aos="fade-up">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="review-text">"كرم من المصممين القلائل اللي بيفهموا يعني إيه تسويق. التصميمات مش بس شكلها حلو، دي فعلاً جابت مبيعات وفرقت في الحملة الأخيرة بتاعتنا."</p>
-                    <div class="client-info">
-                        <h4>أحمد الفايد</h4>
-                        <span>مدير تسويق - شركة عقارية</span>
+                <div class="review-card" data-aos="fade-right">
+                    <i class="fas fa-quote-right review-icon"></i>
+                    <div>
+                        <p class="review-text" data-key="rev_1_text">"كرم من المصممين القلائل اللي بيفهموا يعني إيه تسويق. التصميمات مش بس شكلها حلو، دي فعلاً جابت مبيعات."</p>
+                        <div class="client-info">
+                            <h4 data-key="rev_1_name">أحمد الفايد</h4>
+                            <span data-key="rev_1_role">مدير تسويق - شركة عقارية</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="review-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="review-text">"السرعة والجودة هما عنوان الشغل مع كرم. طلبت تعديلات كتير وكان متقبل جداً وصبور لحد ما وصلنا للنتيجة اللي في دماغي بالظبط."</p>
-                    <div class="client-info">
-                        <h4>سارة التميمي</h4>
-                        <span>مالكة براند ملابس (السعودية)</span>
+                <div class="review-card" data-aos="fade-left" style="align-self: flex-end;">
+                    <i class="fas fa-quote-left review-icon"></i>
+                    <div>
+                        <p class="review-text" data-key="rev_2_text">"السرعة والجودة هما عنوان الشغل مع كرم. طلبت تعديلات كتير وكان متقبل جداً وصبور."</p>
+                        <div class="client-info">
+                            <h4 data-key="rev_2_name">سارة التميمي</h4>
+                            <span data-key="rev_2_role">مالكة براند ملابس (السعودية)</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="review-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="review-text">"شغله في الدمج (Manipulation) عبقري! قدر يحول فكرة خيالية في دماغي لصورة واقعية جداً استخدمناها في إعلانات السوشيال ميديا."</p>
-                    <div class="client-info">
-                        <h4>محمد علي</h4>
-                        <span>صانع محتوى تقني</span>
+                <div class="review-card" data-aos="fade-right">
+                    <i class="fas fa-quote-right review-icon"></i>
+                    <div>
+                        <p class="review-text" data-key="rev_3_text">"شغله في الدمج (Manipulation) عبقري! قدر يحول فكرة خيالية لصورة واقعية جداً."</p>
+                        <div class="client-info">
+                            <h4 data-key="rev_3_name">محمد علي</h4>
+                            <span data-key="rev_3_role">صانع محتوى تقني</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="review-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="review-text">"السيستم اللي عمله لصفحتنا خلانا نطلع بشكل بروفيشنال قدام المنافسين. بجد شكراً على الاهتمام بالتفاصيل."</p>
-                    <div class="client-info">
-                        <h4>شركة CodeZone</h4>
-                        <span>شركة برمجيات</span>
+                <div class="review-card" data-aos="fade-left" style="align-self: flex-end;">
+                    <i class="fas fa-quote-left review-icon"></i>
+                    <div>
+                        <p class="review-text" data-key="rev_4_text">"السيستم اللي عمله لصفحتنا خلانا نطلع بشكل بروفيشنال قدام المنافسين."</p>
+                        <div class="client-info">
+                            <h4>CodeZone</h4>
+                            <span data-key="rev_4_role">شركة برمجيات</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="review-card" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-quote-right"></i>
-                    <p class="review-text">"تجربة ممتازة واحترافية في التعامل والالتزام بالمواعيد. أنصح أي حد عايز شغل يواجه بيه السوق يتعامل مع كرم."</p>
-                    <div class="client-info">
-                        <h4>د. عمر خالد</h4>
-                        <span>عيادات دنتال كير</span>
+                <div class="review-card" data-aos="fade-right">
+                    <i class="fas fa-quote-right review-icon"></i>
+                    <div>
+                        <p class="review-text" data-key="rev_5_text">"تجربة ممتازة واحترافية في التعامل والالتزام بالمواعيد. أنصح أي حد يتعامل مع كرم."</p>
+                        <div class="client-info">
+                            <h4 data-key="rev_5_name">د. عمر خالد</h4>
+                            <span data-key="rev_5_role">عيادات دنتال كير</span>
+                        </div>
                     </div>
                 </div>
 
@@ -578,7 +555,7 @@
 
     <section id="blog" style="padding: 100px 0;">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">دليلك في التصميم</h2>
+            <h2 class="section-title" data-aos="fade-up" data-key="section_blog">المدونة</h2>
             <div class="blog-container" id="blog-grid">
                 </div>
         </div>
@@ -586,45 +563,29 @@
 
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 20px;" data-aos="fade-down">جاهز نبدأ؟</h2>
-            <p style="text-align: center; color: #aaa; margin-bottom: 40px;" data-aos="fade-up">املأ البيانات وهتواصل معاك فوراً</p>
-            
+            <h2 class="section-title" style="margin-bottom: 20px;" data-aos="fade-down" data-key="contact_title">جاهز نبدأ؟</h2>
+            <p style="text-align: center; color: #aaa; margin-bottom: 40px;" data-aos="fade-up" data-key="contact_sub">املأ البيانات وهتواصل معاك فوراً</p>
             <div class="form-box" data-aos="zoom-in">
                 <form action="https://formsubmit.co/karammh112@gmail.com" method="POST">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="New Lead from Website!">
-                    <input type="hidden" name="_next" value="https://www.behance.net/karamharaaz"> <div class="form-group">
-                        <label>الاسم بالكامل</label>
-                        <input type="text" name="name" class="form-control" required placeholder="اكتب اسمك هنا">
-                    </div>
-                    
-                    <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <div>
-                            <label>رقم الموبايل (واتساب)</label>
-                            <input type="tel" name="phone" class="form-control" required placeholder="010xxxxxxx">
-                        </div>
-                        <div>
-                            <label>البريد الإلكتروني</label>
-                            <input type="email" name="email" class="form-control" required placeholder="email@example.com">
-                        </div>
-                    </div>
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New Lead from Karam Haraz Website">
+                    <input type="hidden" name="_next" value="https://www.behance.net/karamharaaz"> 
 
                     <div class="form-group">
-                        <label>تفاصيل المشروع</label>
-                        <textarea name="message" class="form-control" placeholder="محتاج تصميمات لإيه بالظبط؟..."></textarea>
+                        <label data-key="form_name">الاسم بالكامل</label>
+                        <input type="text" name="name" class="form-control" required>
                     </div>
-
-                    <button type="submit" class="btn" style="width: 100%;">إرسال التفاصيل <i class="fas fa-paper-plane"></i></button>
+                    <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div><label data-key="form_phone">رقم الموبايل</label><input type="tel" name="phone" class="form-control" required></div>
+                        <div><label data-key="form_email">البريد الإلكتروني</label><input type="email" name="email" class="form-control" required></div>
+                    </div>
+                    <div class="form-group">
+                        <label data-key="form_msg">تفاصيل المشروع</label>
+                        <textarea name="message" class="form-control" style="min-height: 150px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;" data-key="form_btn">إرسال التفاصيل <i class="fas fa-paper-plane"></i></button>
                 </form>
-                
-                <div style="text-align: center; margin-top: 30px;">
-                    <p style="color: #777;">أو تواصل مباشرة</p>
-                    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px;">
-                        <a href="https://wa.me/201063110138" style="font-size: 1.5rem; color: #25D366;"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:karammh112@gmail.com" style="font-size: 1.5rem; color: #EA4335;"><i class="fas fa-envelope"></i></a>
-                        <a href="https://www.behance.net/karamharaaz" style="font-size: 1.5rem; color: #053eff;"><i class="fab fa-behance"></i></a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -636,132 +597,247 @@
     </footer>
 
     <div id="articleModal" class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <div class="modal-content" id="modal-content">
-            </div>
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modal-content"></div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+        AOS.init({ duration: 800, once: true });
 
-        // --- Blog Data (Detailed & Long) ---
+        // --- Translations Object ---
+        const dictionary = {
+            ar: {
+                nav_home: "الرئيسية", nav_services: "تخصصاتي", nav_portfolio: "أعمالي", nav_blog: "المقالات", nav_contact: "تواصل الآن",
+                hero_name: "كرم حراز", hero_desc_1: "مش مجرد تصميمات شكلها حلو، أنا بساعدك تبني براند قوي", hero_desc_2: "متخصص في تصميمات الفيجوال و السوشيال ميديا",
+                stat_exp: "سنوات خبرة", stat_proj: "مشروع ناجح", stat_client: "عميل سعيد",
+                hero_cta: "ابدأ مشروعك", hero_behance: "معرض بيهانس",
+                section_services: "تخصصاتي",
+                serv_1_desc: "بصمملك سيستم تصميمات كامل لصفحاتك بيضمن إن شكل البراند بتاعك يكون موحد، قوي، واحترافي في كل بوست ينزل.",
+                serv_2_desc: "تصميمات إعلانية بتركز بشكل أساسي على البيع (Sales) وجذب انتباه العميل من أول ثانية، معمولة خصيصاً عشان تحقق نتايج.",
+                serv_3_desc: "بكون شريكك البصري؛ تطوير مستمر لهوية البراند وحل أي مشاكل بصرية تواجهك عشان نضمن إن شكلك دايماً مميز في السوق.",
+                section_whyme: "لماذا أنا؟",
+                val_1_t: "تفكير استراتيجي", val_1_d: "بفهم أهدافك الأول وبصمم بناءً عليها.",
+                val_2_t: "احترافية AI", val_2_d: "توظيف الذكاء الاصطناعي لتوفير الوقت والإبداع.",
+                val_3_t: "فهم الماركتينج", val_3_d: "خلفية تسويقية تخلي التصميم يبيع.",
+                val_4_t: "مرونة والتزام", val_4_d: "تسليم في الميعاد بجودة عالية.",
+                val_5_t: "تمكن الأدوات", val_5_d: "خبرة قوية في برامج أدوبي.",
+                val_6_t: "اهتمام بالتفاصيل", val_6_d: "عيني دايماً على أدق التفاصيل.",
+                section_work: "أحدث الأعمال", view_project: "عرض المشروع",
+                section_reviews: "قالوا عني",
+                rev_1_text: "كرم من المصممين القلائل اللي بيفهموا يعني إيه تسويق. التصميمات مش بس شكلها حلو، دي فعلاً جابت مبيعات.", rev_1_name: "أحمد الفايد", rev_1_role: "مدير تسويق",
+                rev_2_text: "السرعة والجودة هما عنوان الشغل مع كرم. طلبت تعديلات كتير وكان متقبل جداً وصبور.", rev_2_name: "سارة التميمي", rev_2_role: "مالكة براند (السعودية)",
+                rev_3_text: "شغله في الدمج (Manipulation) عبقري! قدر يحول فكرة خيالية لصورة واقعية جداً.", rev_3_name: "محمد علي", rev_3_role: "صانع محتوى",
+                rev_4_text: "السيستم اللي عمله لصفحتنا خلانا نطلع بشكل بروفيشنال قدام المنافسين.", rev_4_role: "شركة برمجيات",
+                rev_5_text: "تجربة ممتازة واحترافية في التعامل والالتزام بالمواعيد.", rev_5_name: "د. عمر خالد", rev_5_role: "عيادات دنتال كير",
+                section_blog: "المدونة", read_more: "اقرأ المقال كاملاً",
+                contact_title: "جاهز نبدأ؟", contact_sub: "املأ البيانات وهتواصل معاك فوراً",
+                form_name: "الاسم بالكامل", form_phone: "رقم الموبايل", form_email: "البريد الإلكتروني", form_msg: "تفاصيل المشروع", form_btn: "إرسال التفاصيل"
+            },
+            en: {
+                nav_home: "Home", nav_services: "Services", nav_portfolio: "Portfolio", nav_blog: "Blog", nav_contact: "Contact",
+                hero_name: "Karam Haraz", hero_desc_1: "Not just pretty designs, I help you build a strong brand.", hero_desc_2: "Visual & Social Media Design Specialist",
+                stat_exp: "Years Exp.", stat_proj: "Projects", stat_client: "Happy Clients",
+                hero_cta: "Start Project", hero_behance: "Behance Profile",
+                section_services: "My Services",
+                serv_1_desc: "Creating a full design system for your pages ensuring a unified, strong, and professional brand look in every post.",
+                serv_2_desc: "Ad designs focused on Sales and grabbing attention from the first second, tailored to achieve results.",
+                serv_3_desc: "Your visual partner; continuous brand identity development and solving visual problems to keep you unique in the market.",
+                section_whyme: "Why Me?",
+                val_1_t: "Strategic Thinking", val_1_d: "I understand your goals first, then design.",
+                val_2_t: "AI Mastery", val_2_d: "Leveraging AI for creativity and efficiency.",
+                val_3_t: "Marketing Mindset", val_3_d: "Marketing background makes designs sell.",
+                val_4_t: "Commitment", val_4_d: "On-time delivery with high quality.",
+                val_5_t: "Tool Expertise", val_5_d: "Strong command of Adobe Creative Suite.",
+                val_6_t: "Detail Oriented", val_6_d: "Eyes always on the smallest details.",
+                section_work: "Selected Works", view_project: "View Project",
+                section_reviews: "Testimonials",
+                rev_1_text: "Karam is one of the few designers who understand marketing. Designs didn't just look good, they drove sales.", rev_1_name: "Ahmed Elfayed", rev_1_role: "Marketing Manager",
+                rev_2_text: "Speed and quality define working with Karam. He was patient with my many edits.", rev_2_name: "Sara Altamimi", rev_2_role: "Brand Owner (KSA)",
+                rev_3_text: "His manipulation work is genius! Turned a fantasy idea into a realistic image.", rev_3_name: "Mohamed Ali", rev_3_role: "Content Creator",
+                rev_4_text: "The design system he built made us look very professional against competitors.", rev_4_role: "Software Company",
+                rev_5_text: "Excellent experience, professional communication, and punctuality.", rev_5_name: "Dr. Omar Khaled", rev_5_role: "Dental Care Clinic",
+                section_blog: "Blog", read_more: "Read Full Article",
+                contact_title: "Ready to Start?", contact_sub: "Fill the form and I'll contact you instantly",
+                form_name: "Full Name", form_phone: "Phone Number", form_email: "Email Address", form_msg: "Project Details", form_btn: "Send Details"
+            }
+        };
+
+        // --- Bilingual Blog Data ---
         const articles = [
             {
                 id: 1,
-                title: "خارطة طريق تعلم تصميم السوشيال ميديا في 2026",
-                tag: "تعليم",
-                img: "https://images.unsplash.com/photo-1626785774573-4b7993143a26?q=80&w=1000",
-                content: `
-                    <h2>كيف تصبح مصمم سوشيال ميديا محترف في 2026؟</h2>
-                    <p>مجال تصميم السوشيال ميديا هو الأكثر طلباً حالياً في السوق العربي والعالمي. الشركات لم تعد تعتمد على التلفزيون أو الجرائد، بل تعتمد على "البوست" الذي يظهر أمامك على فيسبوك وإنستجرام. إليك الدليل الشامل لتبدأ رحلتك.</p>
-                    
-                    <h3>أولاً: الأدوات الأساسية (ليست مجرد فوتوشوب)</h3>
-                    <p>في 2026، لم يعد الفوتوشوب كافياً. نعم هو الأساس، ولكن يجب أن تمتلك ترسانة أدوات:</p>
-                    <ul>
-                        <li><strong>Adobe Photoshop:</strong> للدمج ومعالجة الصور وتصميم البوسترات الرئيسية.</li>
-                        <li><strong>Adobe Illustrator:</strong> للتايبوجرافي (الكتابة) وتصميم الشعارات والأيقونات الفيكتور.</li>
-                        <li><strong>Midjourney / Firefly:</strong> أدوات الذكاء الاصطناعي التي تساعدك في توليد صور وخلفيات مستحيلة التنفيذ بالطرق التقليدية في وقت قصير.</li>
-                        <li><strong>After Effects (اختياري ولكنه ميزة):</strong> لتحريك التصميمات حركة بسيطة (Motion Graphics) لأن الفيديو يتصدر المشهد.</li>
-                    </ul>
-
-                    <h3>ثانياً: التغذية البصرية (سر المهنة)</h3>
-                    <p>المصمم الشاطر "عينه شبعانة". قبل أن تفتح الكمبيوتر، يجب أن تقضي 30 دقيقة يومياً على مواقع مثل Behance و Pinterest. ولكن لا تتفرج فقط، بل حلل:</p>
-                    <ul>
-                        <li>لماذا اختار المصمم هذا اللون؟</li>
-                        <li>من أين يأتي مصدر الإضاءة؟</li>
-                        <li>ما هو نوع الخط المستخدم؟</li>
-                    </ul>
-                    <p>أنصحك بمتابعة قنوات يوتيوب عربية قوية مثل: <strong>نور حمصي</strong> لأساسيات الأكاديمية، و <strong>عمرو عطا الله</strong> لتعلم فن الدمج والمانيبوليشن.</p>
-
-                    <h3>ثالثاً: فهم قواعد التسويق (Marketing)</h3>
-                    <p>أنت لست فناناً، أنت مصمم تجاري. هدفك بيع منتج أو خدمة. يجب أن تفهم سيكولوجية الألوان (الأحمر للجوع والعروض، الأزرق للثقة). يجب أن تعرف قاعدة 20/80 في النصوص (20% نص و 80% صورة). التصميم المزدحم لا يبيع.</p>
-
-                    <h3>رابعاً: بناء البورتفليو (Portfolio)</h3>
-                    <p>لا تنتظر العميل الأول لتبني معرض أعمالك. قم بعمل مشاريع وهمية (Fake Projects). تخيل أن شركة "بيبسي" طلبت منك إعلاناً، ونفذه. ضع هذه الأعمال على Behance بشكل منظم، واشرح المشكلة التي حللتها بتصميمك.</p>
-                `
+                tag: {ar: "تعليم", en: "Education"},
+                title: {ar: "خارطة طريق تعلم تصميم السوشيال ميديا في 2026", en: "Social Media Design Roadmap 2026"},
+                img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000",
+                desc: {ar: "الدليل الشامل للبدء في مجال تصميم السوشيال ميديا.", en: "Comprehensive guide to starting in social media design."},
+                content: {
+                    ar: `<h2>كيف تصبح مصمم سوشيال ميديا محترف؟</h2><p>مجال تصميم السوشيال ميديا هو الأكثر طلباً حالياً. الشركات لم تعد تعتمد على التلفزيون، بل على "البوست".</p><h3>1. الأدوات الأساسية</h3><ul><li><strong>Photoshop:</strong> للدمج ومعالجة الصور.</li><li><strong>Illustrator:</strong> للشعارات.</li><li><strong>AI Tools:</strong> لتوليد الصور.</li></ul><h3>2. التغذية البصرية</h3><p>المصمم الشاطر "عينه شبعانة". تابع Behance و Pinterest يومياً.</p>`,
+                    en: `<h2>How to become a pro Social Media Designer?</h2><p>Social media design is the most in-demand skill right now. Companies rely on "Posts" not TV ads.</p><h3>1. Essential Tools</h3><ul><li><strong>Photoshop:</strong> For manipulation.</li><li><strong>Illustrator:</strong> For vectors.</li><li><strong>AI Tools:</strong> For asset generation.</li></ul><h3>2. Visual Feeding</h3><p>Feed your eyes daily on Behance and Pinterest.</p>`
+                }
             },
             {
                 id: 2,
-                title: "كيف تحقق أول 1000 دولار من الفري لانس؟",
-                tag: "عمل حر",
+                tag: {ar: "عمل حر", en: "Freelance"},
+                title: {ar: "كيف تحقق أول 1000 دولار من الفري لانس؟", en: "How to make your first $1000 Freelancing?"},
                 img: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?q=80&w=1000",
-                content: `
-                    <h2>دليل الفري لانسر العربي للربح من التصميم</h2>
-                    <p>العمل الحر ليس سهلاً، ولكنه مربح إذا تعاملت معه كـ "بيزنس" وليس كهواية. إليك الخطة الكاملة لتحقيق دخل ثابت.</p>
-
-                    <h3>1. التخصص هو المفتاح (Niche Down)</h3>
-                    <p>لا تكن "مصمم بتاع كله". العميل يثق في المتخصص. بدلاً من أن تقول "أنا مصمم جرافيك"، قل "أنا متخصص في تصميمات المطاعم" أو "متخصص في إعلانات العقارات". التخصص يجعلك الخبير الأول في مجالك ويسمح لك بطلب أسعار أعلى.</p>
-
-                    <h3>2. التواجد الرقمي (Personal Branding)</h3>
-                    <p>العملاء موجودون على LinkedIn. قم بتظبيط بروفايلك، ولا تنشر فقط صور التصميمات، بل انشر "كواليس العمل". اكتب عن المشاكل التي واجهتها وكيف حللتها. العميل يريد أن يرى عقليتك قبل فنك.</p>
-
-                    <h3>3. التسعير (Pricing)</h3>
-                    <p>أكبر خطأ يقع فيه المبتدئون هو حرق الأسعار. لا تبع اللوجو بـ 5 دولار. احسب تكلفة ساعتك، تكلفة اشتراك البرامج، استهلاك الكهرباء واللابتوب. قدم للعميل 3 باقات (اقتصادية، متوسطة، احترافية). غالباً سيختار المتوسطة.</p>
-
-                    <h3>4. التعامل مع العميل</h3>
-                    <p>العميل ليس عدوك. عندما يطلب تعديلات كثيرة، فهذا لأنه لم يفهم وجهة نظرك أو أنت لم تفهم ما يريد. اطلب "Brief" واضح ومكتوب قبل البدء. خذ 50% عربون مقدماً دائماً.</p>
-                `
+                desc: {ar: "خطوات عملية للانتقال من مصمم هاوٍ إلى فري لانسر محترف.", en: "Practical steps to go from hobbyist to professional freelancer."},
+                content: {
+                    ar: `<h2>دليل الفري لانسر العربي</h2><p>العمل الحر ليس سهلاً، ولكنه مربح.</p><h3>1. التخصص (Niche)</h3><p>لا تكن "مصمم بتاع كله". تخصص في مجال محدد.</p><h3>2. التواجد الرقمي</h3><p>العملاء موجودون على LinkedIn. انشر كواليس شغلك.</p><h3>3. التسعير</h3><p>لا تحرق أسعارك. احسب تكلفتك وقدم باقات.</p>`,
+                    en: `<h2>Freelancer Guide</h2><p>Freelancing is profitable if treated as a business.</p><h3>1. Niche Down</h3><p>Don't be a generalist. Specialize in one area.</p><h3>2. Digital Presence</h3><p>Clients are on LinkedIn. Post your process.</p><h3>3. Pricing</h3><p>Don't underprice. Calculate costs and offer packages.</p>`
+                }
             },
             {
                 id: 3,
-                title: "الذكاء الاصطناعي في التصميم: تهديد أم فرصة؟",
-                tag: "تكنولوجيا",
+                tag: {ar: "تكنولوجيا", en: "Tech"},
+                title: {ar: "الذكاء الاصطناعي: هل سيأخذ وظيفتي؟", en: "Will AI take my job?"},
                 img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000",
-                content: `
-                    <h2>هل سيأخذ الروبوت وظيفتي؟</h2>
-                    <p>السؤال الذي يرعب الجميع. الإجابة الصريحة: الذكاء الاصطناعي لن يستبدل المصمم، ولكن "المصمم الذي يستخدم الذكاء الاصطناعي سيستبدل المصمم الذي لا يستخدمه".</p>
-
-                    <h3>كيف تستفيد من الـ AI في 2026؟</h3>
-                    <ul>
-                        <li><strong>توليد الأفكار (Brainstorming):</strong> استخدم ChatGPT ليقترح عليك أفكاراً لحملة إعلانية عن القهوة مثلاً. سيعطيك 10 أفكار في دقيقة.</li>
-                        <li><strong>تجهيز الصور (Assets):</strong> بدلاً من البحث لساعات في Google عن "صورة قطة ترتدي نظارة"، اطلبها من Midjourney وستحصل عليها بجودة خرافية وحصرية لك.</li>
-                        <li><strong>التعديل السريع:</strong> خاصية Generative Fill في فوتوشوب تمكنك من توسيع خلفية الصورة أو تغيير ملابس الشخصية بضغطة زر.</li>
-                    </ul>
-
-                    <h3>ما لا يستطيع الـ AI فعله</h3>
-                    <p>الذكاء الاصطناعي يفتقد "اللمسة الإنسانية" و "الفهم الثقافي". هو لا يعرف أن اللون الأخضر في ثقافتنا يرتبط أحياناً بالطبيعة وأحياناً أخرى بأشياء أخرى حسب السياق. هو لا يفهم "النكتة" أو "التريند" المحلي. هنا يأتي دورك لتوظيف هذه الأدوات لخدمة فكرتك البشرية.</p>
-                `
+                desc: {ar: "الحقيقة الكاملة حول أدوات AI وكيف تستخدمها لصالحك.", en: "The truth about AI tools and how to use them to your advantage."},
+                content: {
+                    ar: `<h2>المصمم الذي يستخدم AI سيستبدل من لا يستخدمه</h2><p>الذكاء الاصطناعي أداة قوية جداً.</p><h3>كيف تستفيد منه؟</h3><ul><li>توليد الأفكار (ChatGPT).</li><li>تجهيز الصور (Midjourney).</li><li>التعديل السريع (Generative Fill).</li></ul>`,
+                    en: `<h2>AI users will replace non-users</h2><p>AI is a powerful tool.</p><h3>How to benefit?</h3><ul><li>Brainstorming (ChatGPT).</li><li>Assets (Midjourney).</li><li>Quick Edits (Generative Fill).</li></ul>`
+                }
+            },
+            {
+                id: 4,
+                tag: {ar: "نظريات", en: "Theory"},
+                title: {ar: "سيكولوجية الألوان في الإعلانات", en: "Color Psychology in Ads"},
+                img: "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=1000",
+                desc: {ar: "كيف تختار الألوان التي تؤثر على قرار الشراء؟", en: "How to choose colors that influence buying decisions?"},
+                content: {
+                    ar: `<h2>اللون رسالة</h2><ul><li><strong>الأحمر:</strong> طاقة، جوع (مطاعم).</li><li><strong>الأزرق:</strong> ثقة (بنوك).</li><li><strong>الذهبي:</strong> فخامة.</li></ul>`,
+                    en: `<h2>Color is a message</h2><ul><li><strong>Red:</strong> Energy, Hunger.</li><li><strong>Blue:</strong> Trust.</li><li><strong>Gold:</strong> Luxury.</li></ul>`
+                }
+            },
+            {
+                id: 5,
+                tag: {ar: "تصميم", en: "Design"},
+                title: {ar: "أسرار الدمج الرقمي (Manipulation)", en: "Photo Manipulation Secrets"},
+                img: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1000",
+                desc: {ar: "كيف تصنع عوالماً خيالية من صور عادية؟", en: "How to create fantasy worlds from normal photos?"},
+                content: {
+                    ar: `<h2>صناعة المستحيل</h2><h3>1. المنظور</h3><p>تأكد من زوايا التصوير.</p><h3>2. الإضاءة</h3><p>وحد مصدر الضوء والظلال.</p>`,
+                    en: `<h2>Creating the impossible</h2><h3>1. Perspective</h3><p>Match angles.</p><h3>2. Lighting</h3><p>Unify light sources and shadows.</p>`
+                }
+            },
+            {
+                id: 6,
+                tag: {ar: "مهني", en: "Career"},
+                title: {ar: "كيف تبني بورتفليو يبيع شغلك؟", en: "Building a Portfolio that Sells"},
+                img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000",
+                desc: {ar: "العميل لا يهمه شهادتك، يهمه أعمالك.", en: "Clients don't care about degrees, they care about work."},
+                content: {
+                    ar: `<h2>Case Studies</h2><p>احكِ قصة المشروع والمشكلة والحل، لا تضع صوراً فقط.</p>`,
+                    en: `<h2>Case Studies</h2><p>Tell the story, the problem, and the solution. Don't just post images.</p>`
+                }
+            },
+            {
+                id: 7,
+                tag: {ar: "تايبوجرافي", en: "Typography"},
+                title: {ar: "قواعد الخطوط العربية", en: "Arabic Typography Rules"},
+                img: "https://images.unsplash.com/photo-1560416313-414b33c856a9?q=80&w=1000",
+                desc: {ar: "اختيار الخط المناسب هو 50% من جمال التصميم.", en: "Choosing the right font is 50% of the design."},
+                content: {
+                    ar: `<h2>أنواع الخطوط</h2><ul><li>النسخ: للقراءة.</li><li>الكوفي: للعناوين.</li></ul><p>لا تستخدم أكثر من خطين.</p>`,
+                    en: `<h2>Font Types</h2><ul><li>Naskh: Reading.</li><li>Kufi: Headlines.</li></ul><p>Don't use more than 2 fonts.</p>`
+                }
+            },
+            {
+                id: 8,
+                tag: {ar: "إنتاجية", en: "Productivity"},
+                title: {ar: "إدارة الوقت للمصممين", en: "Time Management for Designers"},
+                img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1000",
+                desc: {ar: "كيف تنجز مشاريع أكثر بدون احتراق؟", en: "How to do more without burnout?"},
+                content: {
+                    ar: `<h2>تقنية بومودورو</h2><p>25 دقيقة عمل، 5 دقائق راحة.</p><h3>تنظيم الملفات</h3><p>سمي ملفاتك بنظام واضح.</p>`,
+                    en: `<h2>Pomodoro</h2><p>25 min work, 5 min rest.</p><h3>Organize Files</h3><p>Name your files systematically.</p>`
+                }
+            },
+            {
+                id: 9,
+                tag: {ar: "براندنج", en: "Branding"},
+                title: {ar: "الفرق بين البراند واللوجو", en: "Brand vs Logo"},
+                img: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000",
+                desc: {ar: "لماذا يدفع العملاء للبراندنج وليس مجرد شعار؟", en: "Why clients pay for branding, not just logos?"},
+                content: {
+                    ar: `<h2>البراند هو الروح</h2><p>اللوجو مجرد رمز. البراند يشمل الألوان، الصوت، والقيم.</p>`,
+                    en: `<h2>Brand is the Soul</h2><p>Logo is just a symbol. Brand includes colors, voice, and values.</p>`
+                }
+            },
+            {
+                id: 10,
+                tag: {ar: "هاردوير", en: "Hardware"},
+                title: {ar: "مواصفات كمبيوتر الجرافيك 2026", en: "Graphic PC Specs 2026"},
+                img: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1000",
+                desc: {ar: "كيف تختار جهازاً يتحمل الرندر؟", en: "Choosing a PC for rendering."},
+                content: {
+                    ar: `<h2>المواصفات</h2><ul><li>RAM: 32GB minimum.</li><li>Screen: IPS 100% sRGB.</li></ul>`,
+                    en: `<h2>Specs</h2><ul><li>RAM: 32GB minimum.</li><li>Screen: IPS 100% sRGB.</li></ul>`
+                }
+            },
+            {
+                id: 11,
+                tag: {ar: "بيزنس", en: "Business"},
+                title: {ar: "التعامل مع العملاء الصعبين", en: "Handling Difficult Clients"},
+                img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000",
+                desc: {ar: "فن التفاوض وإقناع العميل.", en: "The art of negotiation."},
+                content: {
+                    ar: `<h2>التعليم قبل التنفيذ</h2><p>اشرح للعميل "لماذا".</p><h3>العقد</h3><p>حدد عدد التعديلات مسبقاً.</p>`,
+                    en: `<h2>Educate first</h2><p>Explain "Why".</p><h3>Contract</h3><p>Set revision limits beforehand.</p>`
+                }
+            },
+            {
+                id: 12,
+                tag: {ar: "سوق", en: "Market"},
+                title: {ar: "اتجاهات التصميم في الخليج", en: "Gulf Design Trends"},
+                img: "https://images.unsplash.com/photo-1512453979798-5ea904f18f22?q=80&w=1000",
+                desc: {ar: "ما هو المطلوب في السعودية والإمارات؟", en: "What's in demand in KSA & UAE?"},
+                content: {
+                    ar: `<h2>المطلوب</h2><ul><li>الهوية الوطنية الحديثة.</li><li>الفخامة (Luxury).</li></ul>`,
+                    en: `<h2>In Demand</h2><ul><li>Modern National Identity.</li><li>Luxury Style.</li></ul>`
+                }
             }
         ];
 
-        // Fill Data
-        const blogContainer = document.getElementById('blog-grid');
-        
-        // Let's replicate articles to show more boxes (Simulating 12 articles)
-        const allArticles = [...articles, ...articles, ...articles, ...articles].slice(0, 12);
+        let currentLang = 'ar';
 
-        allArticles.forEach((art, index) => {
-            const card = document.createElement('div');
-            card.className = 'blog-card';
-            card.setAttribute('data-aos', 'fade-up');
-            card.onclick = () => openModal(index % 3); // Cycle through the 3 main contents
-            card.innerHTML = `
-                <img src="${art.img}" class="blog-thumb">
-                <div class="blog-body">
-                    <span class="blog-tag">${art.tag}</span>
-                    <h3 class="blog-title">${art.title} ${index > 2 ? '#' + (index+1) : ''}</h3>
-                    <span class="read-btn">اقرأ المقال كاملاً <i class="fas fa-arrow-left"></i></span>
-                </div>
-            `;
-            blogContainer.appendChild(card);
-        });
+        function renderArticles() {
+            const blogContainer = document.getElementById('blog-grid');
+            blogContainer.innerHTML = '';
+            
+            articles.forEach((art, index) => {
+                const card = document.createElement('div');
+                card.className = 'blog-card';
+                card.setAttribute('data-aos', 'fade-up');
+                card.onclick = () => openModal(index);
+                card.innerHTML = `
+                    <img src="${art.img}" class="blog-thumb">
+                    <div class="blog-body">
+                        <span class="blog-tag">${art.tag[currentLang]}</span>
+                        <h3 class="blog-title">${art.title[currentLang]}</h3>
+                        <p class="blog-desc">${art.desc[currentLang]}</p>
+                        <span class="read-btn">${dictionary[currentLang].read_more} <i class="fas fa-arrow-${currentLang === 'ar' ? 'left' : 'right'}"></i></span>
+                    </div>
+                `;
+                blogContainer.appendChild(card);
+            });
+        }
 
-        // Modal Functions
         function openModal(index) {
             const modal = document.getElementById('articleModal');
             const content = document.getElementById('modal-content');
-            const article = articles[index];
+            const art = articles[index];
             
             content.innerHTML = `
-                <img src="${article.img}" style="width:100%; height:300px; object-fit:cover; border-radius:10px;">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <img src="${art.img}" class="modal-header-img">
                 <div class="modal-body-text">
-                    ${article.content}
-                    <hr style="border-color:#333; margin: 40px 0;">
-                    <p style="color:#gold; text-align:center;">كتب بواسطة: كرم حراز</p>
+                    ${art.content[currentLang]}
+                    <div style="margin-top:30px; padding-top:20px; border-top:1px solid #333; color:#777; text-align:center;">
+                        &copy; 2026 Karam Haraz
+                    </div>
                 </div>
             `;
             modal.style.display = "block";
@@ -773,11 +849,32 @@
             document.body.style.overflow = "auto";
         }
 
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update Static Text
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (dictionary[currentLang][key]) {
+                    el.innerText = dictionary[currentLang][key];
+                }
+            });
+
+            // Update Blog
+            renderArticles();
+        }
+
         window.onclick = function(event) {
             if (event.target == document.getElementById('articleModal')) {
                 closeModal();
             }
         }
+
+        // Init
+        renderArticles();
+
     </script>
 </body>
 </html>
